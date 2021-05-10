@@ -22,3 +22,49 @@ function uploadBg(){
 function uploadcar(){
     ctx.drawImage(car_Img, car_x, car_y, car_width, car_height)
 }
+window.addEventListener("keydown", my_keyDown);
+
+function my_keyDown(e) {
+    keypress = e.keyCode;
+    if (keypress == "37") {
+        left()
+    }
+    if (keypress == "38") {
+        up()
+    }
+    if (keypress == "39") {
+        right()
+    }
+    if (keypress == "40") {
+        down()
+    }
+}
+
+function left() {
+    if (car_x > 0) {
+        car_x = car_x - 10
+        uploadBg()
+        uploadcar()
+    }
+}
+function right() {
+    if (car_x < 700) {
+        car_x = car_x + 10
+        uploadBg()
+        uploadcar()
+    }
+}
+function up() {
+    if (car_y > 0) {
+        car_y = car_y - 10
+        uploadBg()
+        uploadcar()
+    }
+}
+function down() {
+    if (car_y < 400) {
+        car_y = car_y + 10
+        uploadBg()
+        uploadcar()
+    }
+}
